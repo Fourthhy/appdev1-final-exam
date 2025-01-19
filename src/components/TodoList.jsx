@@ -29,9 +29,9 @@ const TodoList = () => {
           <li key={todo.id}>
             {/* Make the todo title clickable to toggle its completion status */}
             <div className="flex">
-              <span onClick={() => toggleStatus(todo.id)} className={todo.status !== "pending" ? `line-through` : `none`}>{todo.title}</span>
+              <span onClick={() => toggleStatus(todo.id)} className={todo.completed ? `line-through` : `none`}>{todo.title}</span>
               &nbsp;
-              <span>Status: {todo.status}</span>
+              <span>Completed: {todo.completed ? "true" : "false"}</span>
               <button className="border-[1px] border-black" onClick={() => deleteTodo(todo.id)}>Delete</button>
             </div>
           </li>
